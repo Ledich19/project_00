@@ -1,42 +1,39 @@
 "use strict";
-//alert("hello");
-// const result = confirm("Are uoy here?");
-// console.log(result);
+/* Задание на урок:
 
-// const answer = +prompt("ваш возрвст 18?", "18");
-// console.log(answer + 5);
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-// const answers = [];
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-// answers[0] = prompt("Как ваше имя", "");
-// answers[1] = prompt("Как ваша фамилия", "");
-// answers[2] = prompt("Какой ваш возраст", "");
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
 
-// document.write(answers);
-// console.log(typeof(answers));
+Проверить, чтобы все работало без ошибок в консоли */
 
+let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "0");
 
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-// const category = 'toys';
-// console.log(`htttps://someurl.com/${category}/5`);
+let nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+let intrestingFilm = prompt("На сколько оцените его?", "1");
+personalMovieDB.movies[nameFilm] = intrestingFilm;
 
-// const user = 'Ivan';
-// alert(`hello, ${user}`);
-
-let incr = 10,
-    decr = 10;
-
-// incr++;
-// decr--;
-
-console.log(incr++);
-console.log(decr--);
-console.log(5%2);
-console.log(2*4 == 8);
-console.log(2*4 == "8");
-console.log(2*4 === "8");
-
-const isChecked = true,
-      isClose = false;
-      console.log(isChecked && isClose);
-      console.log(isChecked || isClose);
+console.log(personalMovieDB.movies);
