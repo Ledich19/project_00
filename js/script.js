@@ -22,7 +22,7 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "0");
+let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -32,8 +32,11 @@ const personalMovieDB = {
     privat: false
 };
 
-let nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-let intrestingFilm = prompt("На сколько оцените его?", "1");
-personalMovieDB.movies[nameFilm] = intrestingFilm;
+let nameFilm0 = prompt("Один из последних просмотренных фильмов?", "");
+let rating0 = prompt("На сколько оцените его?", "1");
+let nameFilm1 = prompt("Один из последних просмотренных фильмов?", "");
+let rating1 = prompt("На сколько оцените его?", "1");
+personalMovieDB.movies[nameFilm0] = rating0;
+personalMovieDB.movies[nameFilm1] = rating1;
 
-console.log(personalMovieDB.movies);
+console.log(personalMovieDB);
