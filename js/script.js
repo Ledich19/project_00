@@ -24,26 +24,35 @@ const personalMovieDB = {
     privat: false
 };
 
-if (numberOfFilms > 0 && numberOfFilms < 10) {
+if (personalMovieDB.count > 0 && personalMovieDB.count <= 10) {
     alert("Просмотрено довольно мало фильмов");
-} else if (numberOfFilms >= 10 && numberOfFilms <= 30) {
+} else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
     alert("Вы классический зритель");
-} else if (numberOfFilms > 30) {
+} else if (personalMovieDB.count > 30) {
     alert("Вы киноман");
 } else {
     alert("Произошла ошибка");
 }
 
 // for (let i = 1; i <= 2; i++) {
-//     let nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+//     const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
 //     if (nameFilm == null || nameFilm == "" || nameFilm.length > 50) {
 //         i--;
 //     } else {
-//         let rating = prompt("На сколько оцените его?", "1");
+//         const rating = prompt("На сколько оцените его?", "1");
 //         personalMovieDB.movies[nameFilm] = rating;
 //     }
 // }
 
+for (let i = 0; i < 2; i++) {
+    const nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+    const rating = prompt("На сколько оцените его?", "");
+    if (nameFilm != null && rating != null && nameFilm != "" && rating != "" && nameFilm.length < 50) {
+        personalMovieDB.movies[nameFilm] = rating;
+    } else {
+        i--;
+    }
+}
 
 // let i = 1;
 // while (i <= 2) {
@@ -57,17 +66,17 @@ if (numberOfFilms > 0 && numberOfFilms < 10) {
 //     i++;
 // }
 
-let i = 1;
-do {
-    let nameFilm = prompt("Один из последних просмотренных фильмов?", "");
-    if (nameFilm == null || nameFilm == "" || nameFilm.length > 50) {
-        i--;
-    } else {
-        let rating = prompt("На сколько оцените его?", "1");
-        personalMovieDB.movies[nameFilm] = rating;
-    }
-    i++;
-}
-while (i <= 2);
+// let i = 1;
+// do {
+//     let nameFilm = prompt("Один из последних просмотренных фильмов?", "");
+//     if (nameFilm == null || nameFilm == "" || nameFilm.length > 50) {
+//         i--;
+//     } else {
+//         let rating = prompt("На сколько оцените его?", "1");
+//         personalMovieDB.movies[nameFilm] = rating;
+//     }
+//     i++;
+// }
+// while (i <= 2);
 
 console.log(personalMovieDB);
